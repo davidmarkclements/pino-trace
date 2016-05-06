@@ -1,0 +1,26 @@
+{
+  "name": "pino-trace",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Mark Clements",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmarkclements/pino-trace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidmarkclements/pino-trace/issues"
+  },
+  "homepage": "https://github.com/davidmarkclements/pino-trace#readme",
+  "description": "",
+  "devDependencies": {
+    "pino": "^2.3.0",
+    "tap": "^5.7.1"
+  },
+  "dependencies": {
+    "async-tracer": "^0.1.1"
+  }
+}
