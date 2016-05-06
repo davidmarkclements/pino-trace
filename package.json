@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "benchmark": "node benchmark"
   },
   "author": "David Mark Clements",
   "license": "MIT",
@@ -17,6 +18,7 @@
   "homepage": "https://github.com/davidmarkclements/pino-trace#readme",
   "description": "",
   "devDependencies": {
+    "autocannon": "^0.4.0",
     "pino": "^2.3.0",
     "tap": "^5.7.1"
   },

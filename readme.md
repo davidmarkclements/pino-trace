@@ -115,7 +115,38 @@ server.register(require('pino-trace'))
 
 ## Benchmarks
 
-TODO
+Overhead of using `pino-trace` is minimal
+
+```sh
+npm run benchmark
+```
+
+### With tracing
+
+```
+Running 10s test @ http://localhost:3000
+10 connections with 10 pipelining factor
+
+4620k requests in 10s, 51.26 MB read
+Profiling control server for 10 seconds
+Running 10s test @ http://localhost:3000
+10 connections with 10 pipelining factor
+```
+
+### Without tracing
+
+```
+Running 10s test @ http://localhost:3000
+10 connections with 10 pipelining factor
+
+Stat         Avg      Stdev     Max
+Latency (ms) 0.15     0.5       33
+Req/Sec      45109.82 1748.88   46399
+Bytes/Sec    5.02 MB  231.05 kB 5.24 MB
+
+4960k requests in 10s, 55.08 MB read
+```
+
 
 ## Test
 
