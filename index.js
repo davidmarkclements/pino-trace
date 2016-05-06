@@ -16,6 +16,15 @@ var nums = Object.keys(levels).reduce(function (o, k) {
 }, {})
 
 module.exports = function (logger, opts) {
+  if (!logger.stream) {
+    // check if its pino middleware:
+    if (logger.logger) {
+      logger = logger.logger
+    } else {
+      throw Error('pino-trace needs a logger instance')
+    }
+  }
+
   opts = opts || {}
   var level = opts.level
   var stacks = opts.stacks

@@ -86,6 +86,32 @@ If set to a number, (from 1 to Infinity) `stacks` will also
 determine the maximum amount of frames to capture for the log
 (defaults to `Infinity` if `true`). 
 
+## Ecosystem Integration
+
+`pino-trace` is compatible with `express-pino-logger`, `restify-pino-logger`, `koa-pino-logger`, and `rill-pino-logger` middleware.
+
+In each case, simply pass the middleware into `pino-trace`:
+
+```js
+var pino = require('express-pino-logger')
+var trace = require('pino-trace')
+
+var app = express()
+
+app.use(trace(pino({level: 'trace'})))
+```
+
+(TODO)
+ 
+In Hapi simply `register` `pino-trace` after `hapi-pino`:
+
+```js
+server.register(require('hapi-pino'), (err) => {
+  // etc.
+})
+server.register(require('pino-trace'))
+```
+
 
 ## Benchmarks
 
