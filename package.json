@@ -20,9 +20,11 @@
   "devDependencies": {
     "autocannon": "^0.4.0",
     "pino": "^2.3.0",
-    "tap": "^5.7.1"
+    "pino-http": "^1.0.8",
+    "tap": "^5.7.1",
+    "through2": "^2.0.1"
   },
   "dependencies": {
-    "async-tracer": "^0.1.1"
+    "async-tracer": "^0.3.2"
   }
 }

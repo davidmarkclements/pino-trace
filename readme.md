@@ -4,7 +4,7 @@ Trace all async operations performantly with [`pino`](http://npm.im/pino) the fa
 
 [![Build Status](https://travis-ci.org/davidmarkclements/pino-trace.svg)](https://travis-ci.org/davidmarkclements/pino-trace)
 
-## Examples
+## Usage
 
 ### Logger at `trace` level
 
@@ -51,6 +51,19 @@ logger.level = 'info'
 // ops stop being captured and logged
 ```
 
+### Child loggers
+
+Child loggers are supported:
+
+```js
+var pino = require('pino')
+var trace = require('pino-trace')
+
+var logger = pino().child({bound: 'data'})
+logger.level = 'trace'
+trace(logger) // all trace events will have `bound` field
+```
+
 ### Shorthand
 
 `pino-trace` returns the passed in logger instance, allowing for a shorthand:
@@ -83,8 +96,12 @@ each `init` log. The stacks array takes the following form:
 ```
 
 If set to a number, (from 1 to Infinity) `stacks` will also
-determine the maximum amount of frames to capture for the log
-(defaults to `Infinity` if `true`). 
+determine the maximum amount of frames to capture for the log (defaults to `Infinity` if `true`). 
+
+#### `contexts` [default: `false`] `Boolean`
+
+Supply the operations context in the `pre` and `post` logs. 
+The context is an exposed C object that holds state for the async op.
 
 ## Ecosystem Integration
 
