@@ -16,7 +16,7 @@
     "url": "https://github.com/davidmarkclements/pino-trace/issues"
   },
   "homepage": "https://github.com/davidmarkclements/pino-trace#readme",
-  "description": "",
+  "description": "Trace all async operations performantly with pino the fast logger",
   "devDependencies": {
     "autocannon": "^0.4.0",
     "pino": "^2.3.0",
