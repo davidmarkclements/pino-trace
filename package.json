@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "standard && tap test/index.js",
+    "test": "standard && tap --cov test/index.js",
     "benchmark": "node benchmark"
   },
   "author": "David Mark Clements",
