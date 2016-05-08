@@ -8,6 +8,19 @@
   },
   "author": "David Mark Clements",
   "license": "MIT",
+  "keywords": [
+    "logs",
+    "logger",
+    "logging",
+    "pino",
+    "trace",
+    "tracing",
+    "debugging",
+    "performance",
+    "profiling",
+    "fast",
+    "optimize"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davidmarkclements/pino-trace.git"
@@ -19,7 +32,7 @@
   "description": "Trace all async operations performantly with pino the fast logger",
   "devDependencies": {
     "autocannon": "^0.4.0",
-    "pino": "^2.3.0",
+    "pino": "git://github.com/mcollina/pino.git#integration-points",
     "pino-http": "^1.0.8",
     "standard": "^7.0.1",
     "tap": "^5.7.1",
