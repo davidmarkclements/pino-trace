@@ -118,18 +118,6 @@ var app = express()
 app.use(trace(pino({level: 'trace'})))
 ```
 
-(TODO)
- 
-In Hapi simply `register` `pino-trace` after `hapi-pino`:
-
-```js
-server.register(require('hapi-pino'), (err) => {
-  // etc.
-})
-server.register(require('pino-trace'))
-```
-
-
 ## Benchmarks
 
 Overhead of using `pino-trace` is minimal
