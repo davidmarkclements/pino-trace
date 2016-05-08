@@ -89,7 +89,7 @@ If a string, then a relevant [pino](http://npm.im/pino) log level. If a number, 
 #### `stacks` [default: `false`] `Boolean` or `Number`
 
 If `true` then include an array of call sites in
-each `init` log. The stacks array takes the following form:
+each `init` log. The stack array takes the following form:
 
 ```
 ["functionName:fileName:lineNum:colNum"]

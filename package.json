@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "standard && tap test/index.js",
     "benchmark": "node benchmark"
   },
   "author": "David Mark Clements",
@@ -21,10 +21,11 @@
     "autocannon": "^0.4.0",
     "pino": "^2.3.0",
     "pino-http": "^1.0.8",
+    "standard": "^7.0.1",
     "tap": "^5.7.1",
     "through2": "^2.0.1"
   },
   "dependencies": {
-    "async-tracer": "^0.3.2"
+    "async-tracer": "^0.4.2"
   }
 }

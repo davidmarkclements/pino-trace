@@ -9,12 +9,11 @@ module.exports = function (logger, opts) {
   opts = opts || {}
   var levels = logger.levels.values
   var level = opts.level
-  var stacks = opts.stacks
-  var contexts = opts.contexts
+  var stacks = !!opts.stacks
+  var contexts = !!opts.contexts
   if (typeof level === 'string') { level = levels[level] }
   level = level || levels.trace
   var LOG_VERSION = logger.LOG_VERSION
-  var stream = logger.stream
   var suffix = {v: LOG_VERSION}
   // child bindings:
   if (logger.chindings) {
@@ -25,7 +24,8 @@ module.exports = function (logger, opts) {
     prefix: {pid: pid, hostname: hostname, level: level},
     suffix: suffix,
     autostart: (level >= logger.levelVal),
-    stacks: stacks
+    stacks: stacks,
+    contexts: contexts
   })
   logger.onLevelUpdate(function (lvl, val) {
     tracing[val <= level ? 'enable' : 'disable']()
