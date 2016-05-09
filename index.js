@@ -27,7 +27,7 @@ module.exports = function (logger, opts) {
     stacks: stacks,
     contexts: contexts
   })
-  logger.onLevelUpdate(function (lvl, val) {
+  logger.on('level-change', function (lvl, val) {
     tracing[val <= level ? 'enable' : 'disable']()
   })
 

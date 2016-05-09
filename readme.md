@@ -9,6 +9,10 @@ Trace all async operations performantly with [`pino`](http://npm.im/pino) the fa
 `pino-trace` uses [async-tracer](http://npm.im/async-tracer) to hook into async operations (via the native `async_wrap` binding) and output logs in an optimal way that's compatible
 with and supportive of [pino's](http://npm.im/pino) log format.
 
+## Supports
+
+Node v4 to v6
+
 ## Usage
 
 ### Logger at `trace` level

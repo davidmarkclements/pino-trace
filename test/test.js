@@ -158,8 +158,10 @@ test('disables/enables when logger level changes', ({is, end}) => {
     trigger(() => {
       logger.level = 'info'
       trigger(() => {
-        is(count, 4)
-        end()
+        process.nextTick(() => {
+          is(count, 4)
+          end()
+        })
       })
     })
   })

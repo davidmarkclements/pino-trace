@@ -1,19 +1,17 @@
 var pino = require('pino')
+var dns = require('dns')
 var trace = require('./')
 
-var logger = pino()
-logger.level = 'trace'
-
+var logger = pino({level: 'trace'})
 trace(logger)
 
+logger.debug('starting')
+
 process.stdin.resume()
-process.nextTick(() => {
+dns.lookup('example.com', () => {
+  logger.debug('lookup done')
   setTimeout(() => {
-    setTimeout(() => {
-      logger.debug('finished')
-      process.stdin.destroy()
-    }, 2000)
+    process.stdin.destroy()
+    logger.debug('finished')
   }, 1000)
 })
-
-logger.info('hi')
