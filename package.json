@@ -39,6 +39,6 @@
     "through2": "^2.0.1"
   },
   "dependencies": {
-    "async-tracer": "^0.5.0"
+    "async-tracer": "^0.6.0"
   }
 }
