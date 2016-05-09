@@ -129,7 +129,7 @@ app.use(trace(pino({level: 'trace'})))
 
 ## Benchmarks
 
-Overhead of using `pino-trace` is minimal
+Overhead of using `pino-trace` is about 25%.
 
 ```sh
 npm run benchmark
@@ -141,10 +141,10 @@ npm run benchmark
 Running 10s test @ http://localhost:3000
 10 connections with 10 pipelining factor
 
-4620k requests in 10s, 51.26 MB read
-Profiling control server for 10 seconds
-Running 10s test @ http://localhost:3000
-10 connections with 10 pipelining factor
+Stat         Avg      Stdev     Max
+Latency (ms) 0.23     0.75      37
+Req/Sec      33652.37 2340.03   35039
+Bytes/Sec    3.74 MB  249.94 kB 3.93 MB
 ```
 
 ### Without tracing
@@ -154,12 +154,14 @@ Running 10s test @ http://localhost:3000
 10 connections with 10 pipelining factor
 
 Stat         Avg      Stdev     Max
-Latency (ms) 0.15     0.5       33
-Req/Sec      45109.82 1748.88   46399
-Bytes/Sec    5.02 MB  231.05 kB 5.24 MB
-
-4960k requests in 10s, 55.08 MB read
+Latency (ms) 0.13     0.42      34
+Req/Sec      45682.91 1310.58   46335
+Bytes/Sec    5.06 MB  150.72 kB 5.24 MB
 ```
+
+Overhead of turning on tracing with `async_wrap`
+is around 8%, so the net overhead is 17%, mostly
+this is the cost of writing to a stream.
 
 
 ## Test
