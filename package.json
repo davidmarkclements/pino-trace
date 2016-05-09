@@ -1,6 +1,6 @@
 {
   "name": "pino-trace",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "test": "standard && tap --cov test/index.js",
